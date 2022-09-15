@@ -2,6 +2,8 @@ version: "3.7"
 
 services:
   mariadb:
+    ports:
+      - "3306:3306"
     image: wodby/mariadb:$MARIADB_TAG
     container_name: "${PROJECT_NAME}_mariadb"
     stop_grace_period: 30s
@@ -10,17 +12,34 @@ services:
       MYSQL_DATABASE: $DB_NAME
       MYSQL_USER: $DB_USER
       MYSQL_PASSWORD: $DB_PASSWORD
-#    volumes:
+    labels:
+      - "traefik.http.services.${PROJECT_NAME}_mariadb.loadbalancer.server.port=3306"
+      - "traefik.http.routers.${PROJECT_NAME}_mariadb.rule=Host(`mariadb.${PROJECT_BASE_URL}`)"
+    volumes:
 #      - ./mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
-#      - /path/to/mariadb/data/on/host:/var/lib/mysql # Use bind mount
+      - ./mariadb:/var/lib/mysql # Use bind mount
+
+  mautic:
+    container_name: "${PROJECT_NAME}_mautic"
+    image: mautic/mautic:$MAUTIC_VERSION
+    volumes:
+      - ./mautic:/var/www/html
+    environment:
+      - MAUTIC_DB_HOST=$DB_HOST
+      - MAUTIC_DB_USER=$DB_USER
+      - MAUTIC_DB_PASSWORD=$DB_PASSWORD
+      - MAUTIC_DB_NAME=$DB_NAME
+      - MAUTIC_RUN_CRON_JOBS=true
+    restart: always
+    labels:
+      - "traefik.http.routers.${PROJECT_NAME}_mautic.rule=Host(`mautic.${PROJECT_BASE_URL}`)"
 
   php:
     image: wodby/drupal-php:$PHP_TAG
     container_name: "${PROJECT_NAME}_php"
     environment:
-      SSMTP_MAILHUB: mailhog:1025
-#      SSMTP_MAILHUB: opensmtpd:25
-      PHP_SENDMAIL_PATH: '"/usr/bin/dos2unix -u | /usr/sbin/ssmtp -t -f"'
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
+#      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S opensmtpd:25
 #      DB_HOST: $DB_HOST
 #      DB_PORT: $DB_PORT
 #      DB_USER: $DB_USER
@@ -45,20 +64,20 @@ services:
 #      SIMPLETEST_DB: "${DB_DRIVER}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}#tests_"
 #      MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","goog:chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chrome:9515"]'
     volumes:
-    - ./:/var/www/html:cached
+    - ./www:/var/www/html
 ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
 #    - drupal:/var/www/html
 ## For XHProf and Xdebug profiler traces
 #    - files:/mnt/files
 
-  crond:
-    image: wodby/drupal-php:$PHP_TAG
-    container_name: "${PROJECT_NAME}_crond"
-    environment:
-      CRONTAB: "0 * * * * drush -r /var/www/html/web cron"
-    command: sudo -E crond -f -d 0
-    volumes:
-    - ./:/var/www/html:cached
+  # crond:
+  #   image: wodby/drupal-php:$PHP_TAG
+  #   container_name: "${PROJECT_NAME}_crond"
+  #   environment:
+  #     CRONTAB: "0 * * * * drush -r /var/www/html/web cron"
+  #   command: sudo -E LD_PRELOAD=/usr/lib/preloadable_libiconv.so crond -f -d 0
+  #   volumes:
+  #   - ./:/var/www/html:cached
 ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
 #    - drupal:/var/www/html
 
@@ -75,7 +94,7 @@ services:
       NGINX_VHOST_PRESET: $NGINX_VHOST_PRESET
     #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
-    - ./:/var/www/html:cached
+    - ./www:/var/www/html:cached
 ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
 #    - drupal:/var/www/html
     labels:
@@ -149,16 +168,16 @@ services:
 #    labels:
 #    - "traefik.http.routers.${PROJECT_NAME}_adminer.rule=Host(`adminer.${PROJECT_BASE_URL}`)"
 
-#  pma:
-#    image: phpmyadmin/phpmyadmin
-#    container_name: "${PROJECT_NAME}_pma"
-#    environment:
-#      PMA_HOST: $DB_HOST
-#      PMA_USER: $DB_USER
-#      PMA_PASSWORD: $DB_PASSWORD
-#      UPLOAD_LIMIT: 1G
-#    labels:
-#    - "traefik.http.routers.${PROJECT_NAME}_pma.rule=Host(`pma.${PROJECT_BASE_URL}`)"
+  pma:
+   image: phpmyadmin/phpmyadmin
+   container_name: "${PROJECT_NAME}_pma"
+   environment:
+     PMA_HOST: $DB_HOST
+     PMA_USER: $DB_USER
+     PMA_PASSWORD: $DB_PASSWORD
+     UPLOAD_LIMIT: 1G
+   labels:
+   - "traefik.http.routers.${PROJECT_NAME}_pma.rule=Host(`pma.${PROJECT_BASE_URL}`)"
 
 #  solr:
 #    image: wodby/solr:$SOLR_TAG
@@ -172,14 +191,6 @@ services:
 #    labels:
 #    - "traefik.http.services.${PROJECT_NAME}_solr.loadbalancer.server.port=8983"
 #    - "traefik.http.routers.${PROJECT_NAME}_solr.rule=Host(`solr.${PROJECT_BASE_URL}`)"
-
-#  zookeeper:
-#    image: zookeeper:$ZOOKEEPER_TAG
-#    container_name: "${PROJECT_NAME}_zookeeper"
-#    environment:
-#      ZOO_MY_ID: 1
-#      ZOO_SERVERS: server.1=zookeeper:2888:3888;2181
-#      ZOO_4LW_COMMANDS_WHITELIST: mntr, conf, ruok
 
 #  drupal-node:
 #    image: wodby/drupal-node:$DRUPAL_NODE_TAG
@@ -288,7 +299,7 @@ services:
     container_name: "${PROJECT_NAME}_traefik"
     command: --api.insecure=true --providers.docker
     ports:
-    - "${PROJECT_PORT}:80"
+    - '80:80'
 #    - '8080:8080' # Dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
