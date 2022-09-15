@@ -67,8 +67,8 @@ services:
     #      MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","goog:chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chrome:9515"]'
     volumes:
       - ./www:/var/www/html
-      - ./settings.php:/var/www/html/web/sites/default/settings.php
-      - ./composer.json:/var/www/html/composer.json:Z
+    #  - ./settings.php:/var/www/html/web/sites/default/settings.php:Z
+    #  - ./composer.json:/var/www/html/composer.json:Z
   ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
   #    - drupal:/var/www/html
   ## For XHProf and Xdebug profiler traces
