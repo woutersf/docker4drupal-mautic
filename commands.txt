@@ -1,12 +1,22 @@
+#################
+# lazy ass
+#################
+alias drc=docker-compose
+alias gs='git status'
+#shell into Drupal container
+
+#################
 #shell into Drupal container
 #################
 docker exec -it my_drupal9_project_php /bin/bash
 
+
+#################
 #shell into Mautic container
 #################
 docker exec -it my_drupal9_project_mautic /bin/bash
 
-
+#################
 #setting up stuff
 #################
 composer require drupal/unomi:2.x-dev
