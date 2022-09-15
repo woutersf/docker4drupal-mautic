@@ -20,9 +20,9 @@ ports:
   - port: 82
     name: Phpmyadmin
     onOpen: open-browser
-    visibility: public
+    visibility: private
 
   - port: 83
     name: Mailhog
     onOpen: open-browser
-    visibility: public
+    visibility: private
