@@ -1,3 +1,5 @@
 .idea/
 mutagen.yml.lock
 .vscode
+mariadb
+mautic
