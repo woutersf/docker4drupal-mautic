@@ -68,7 +68,7 @@ services:
     volumes:
       - ./www:/var/www/html
       - ./settings.php:/var/www/html/web/sites/default/settings.php
-      - ./composer.json:/var/www/html/composer.json
+      - ./composer.json:/var/www/html/composer.json:Z
   ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
   #    - drupal:/var/www/html
   ## For XHProf and Xdebug profiler traces
@@ -110,7 +110,7 @@ services:
     image: mailhog/mailhog
     container_name: "${PROJECT_NAME}_mailhog"
     ports:
-      - '8025:80'
+      - '83:80'
     labels:
       - "traefik.http.services.${PROJECT_NAME}_mailhog.loadbalancer.server.port=8025"
       - "traefik.http.routers.${PROJECT_NAME}_mailhog.rule=Host(`mailhog.${PROJECT_BASE_URL}`)"
@@ -184,6 +184,8 @@ services:
       PMA_USER: $DB_USER
       PMA_PASSWORD: $DB_PASSWORD
       UPLOAD_LIMIT: 1G
+    ports:
+      - '82:80'
     labels:
       - "traefik.http.routers.${PROJECT_NAME}_pma.rule=Host(`pma.${PROJECT_BASE_URL}`)"
 
