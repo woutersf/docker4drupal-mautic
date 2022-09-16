@@ -14,19 +14,19 @@ docker exec -it my_drupal9_project_php /bin/bash
 vi web/sites/default/settings.php
 ```
 
-#add the gitpod.io trusted host pattern. (in the php container)
+# Add the gitpod.io trusted host pattern. (in the php container)
 ```
 $settings['trusted_host_patterns'] = array(
   '.*\.gitpod\.io$',  '\.localhost$', '\.local$', '\.loc$'
 );
 ```
 
-# shell into Mautic container
+# Shell into Mautic container
 ```
 docker exec -it my_drupal9_project_mautic /bin/bash
 ```
 
-# clear the mautic cache (in the mautic container)
+# Clear the mautic cache (in the mautic container)
 ```
 rm -rf var/cache/*
 ```
