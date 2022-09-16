@@ -2,7 +2,7 @@
 console.log('adding capturescript');
 /**************/
 
-(function(d) {
+(function (d) {
     // attach script tag and defer
     function downloadJSAtOnload() {
         var wf = d.createElement('script'), s = d.scripts[0];
@@ -10,6 +10,7 @@ console.log('adding capturescript');
         wf.defer = true;
         s.parentNode.insertBefore(wf, s);
     }
+
     downloadJSAtOnload();
 })(document);
 
@@ -17,31 +18,35 @@ console.log('adding capturescript');
 console.log('adding recipes to scoring');
 /**************/
 
-window.dsdc = window.dsdc || function () { (dsdc.q = dsdc.q || []).push(arguments) }; dsdc.l = +new Date;
+window.dsdc = window.dsdc || function () {
+    (dsdc.q = dsdc.q || []).push(arguments)
+};
+dsdc.l = +new Date;
 
 window.dsdc('beforeRequest', function (data) {
     // get capture data
     var changedCapture = data.requestData;
-
-    if (changedCapture.event.te__eventType == "dom") {
+    if (changedCapture.event.te__eventType == "js") {
         if (document.querySelector('meta[name="keywords"]') !== null) {
             ds_recipes = document.querySelector('meta[name="keywords"]').content.toLowerCase().split(',');
-            ds_recipes.forEach(function(ds_recipe,index){
+            ds_recipes.forEach(function (ds_recipe, index) {
                 machine_name = ds_recipe.trim().replace(/[^a-z0-9]/gi, '_');
                 console.log(machine_name);
                 // add scoring configuration
-                changedCapture.scoring = {
-                    "ds_recipe": {
-                    }
-                };
+                if (machine_name != "") {
+                    changedCapture.scoring = {
+                        "ds_recipe": {}
+                    };
 
-                changedCapture.scoring.ds_recipe[machine_name] = {
-                    "te__operator": "+",
-                    "te__value": "1"
+                    changedCapture.scoring.ds_recipe[machine_name] = {
+                        "te__operator": "+",
+                        "te__value": "1"
+                    }
+
+                    // use a global function to pass the modified capture back to the main script
+                    dsdc.updateCapture(changedCapture);
                 }
 
-                // use a global function to pass the modified capture back to the main script
-                dsdc.updateCapture(changedCapture);
             });
 
 
