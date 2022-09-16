@@ -1,4 +1,4 @@
-
+console.log('adding capturescript');
 (function(d) {
     // attach script tag and defer
     function downloadJSAtOnload() {
@@ -10,6 +10,7 @@
     downloadJSAtOnload();
 })(document);
 
+console.log('adding custom stuff');
 window.dsdc = window.dsdc || function () { (dsdc.q = dsdc.q || []).push(arguments) }; dsdc.l = +new Date;
 
 window.dsdc('beforeRequest', function (data) {
@@ -18,21 +19,27 @@ window.dsdc('beforeRequest', function (data) {
 
     if (changedCapture.event.te__eventType == "dom") {
         if (document.querySelector('meta[name="keywords"]') !== null) {
-            ds_recipe = document.querySelector('meta[name="keywords"]').content.toLowerCase().replace(/[^a-z0-9]/gi, '_');
+            ds_recipes = document.querySelector('meta[name="keywords"]').content.toLowerCase().split(',');
+            console.log(ds_recipes);
+            ds_recipes.forEach(function(ds_recipe,index){
+                machine_name = ds_recipe.trim().replace(/[^a-z0-9]/gi, '_');
+                console.log(machine_name);
+                // add scoring configuration
+                changedCapture.scoring = {
+                    "ds_recipe": {
+                    }
+                };
 
-            // add scoring configuration
-            changedCapture.scoring = {
-                "ds_recipe": {
+                changedCapture.scoring.ds_recipe[ds_recipe] = {
+                    "te__operator": "+",
+                    "te__value": "1"
                 }
-            };
 
-            changedCapture.scoring.ds_recipe[ds_recipe] = {
-                "te__operator": "+",
-                "te__value": "1"
-            }
+                // use a global function to pass the modified capture back to the main script
+                dsdc.updateCapture(changedCapture);
+            });
 
-            // use a global function to pass the modified capture back to the main script
-            dsdc.updateCapture(changedCapture);
+
         }
     }
 });
