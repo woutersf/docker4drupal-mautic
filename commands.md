@@ -1,7 +1,8 @@
 # I'm a Lazy ass typist
+```
 alias drc=docker-compose
 alias gs='git status'
-
+```
 
 # shell into Drupal container
 ```
