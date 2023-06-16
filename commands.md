@@ -49,7 +49,16 @@ composer require drupal/redirect
 composer require drupal/webform
 composer require drupal/better_exposed_filters
 composer require drupal/views_data_export
+composer require drupal/epp
+composer require drupal/devel
+entity_reference_exposed_filters
+composer require cweagans/composer-patches
+
   ```
+
+
+
+https://www.drupal.org/files/issues/2018-11-02/22429699-114.patch
 
 # Config for Personalisation
  HOST:         unomi-004.dropsolid-sites.com

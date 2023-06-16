@@ -1,0 +1,6 @@
+intercomm.settings_form:
+  title: 'Intercomm'
+  description: 'Configure Intercomm.'
+  parent: system.admin_config_system
+  route_name: intercomm.settings_form
+  weight: 10

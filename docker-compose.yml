@@ -37,7 +37,8 @@ services:
   #     - "traefik.http.routers.${PROJECT_NAME}_mautic.rule=Host(`mautic.${PROJECT_BASE_URL}`)"
 
   php:
-    image: wodby/drupal-php:$PHP_TAG
+    #image: wodby/drupal-php:$PHP_TAG
+    image: wodby/drupal-php:dev
     container_name: "${PROJECT_NAME}_php"
     environment:
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
@@ -66,7 +67,12 @@ services:
     #      SIMPLETEST_DB: "${DB_DRIVER}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}#tests_"
     #      MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","goog:chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chrome:9515"]'
     volumes:
-      - ./www:/var/www/html
+      - ./www/modules/custom:/var/www/html/web/modules/custom:cached
+      - ./www/themes/custom:/var/www/html/web/themes/custom:cached
+      - ./www/config:/var/www/html/config:cached
+      - ./composer.json:/var/www/html/composer.json:cached
+      - ./composer.lock:/var/www/html/composer.lock:cached
+      #- ./www:/var/www/html
     #  - ./settings.php:/var/www/html/web/sites/default/settings.php:Z
     #  - ./composer.json:/var/www/html/composer.json:Z
   ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
@@ -100,7 +106,12 @@ services:
       NGINX_VHOST_PRESET: $NGINX_VHOST_PRESET
     #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
-      - ./www:/var/www/html:cached
+      - ./www/modules/custom:/var/www/html/web/modules/custom:cached
+      - ./www/themes/custom:/var/www/html/web/themes/custom:cached
+      - ./www/config:/var/www/html/config:cached
+      - ./composer.json:/var/www/html/composer.json:cached
+      - ./composer.lock:/var/www/html/composer.lock:cached
+    #  - ./www:/var/www/html:cached
     ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
     #    - drupal:/var/www/html
     labels:

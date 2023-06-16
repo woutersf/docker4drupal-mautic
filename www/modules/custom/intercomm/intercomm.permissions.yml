@@ -1,0 +1,4 @@
+administer intercomm configuration:
+  title: 'Administer intercomm configuration'
+  description: 'Optional description.'
+  restrict access: true

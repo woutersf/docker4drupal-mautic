@@ -1,0 +1,5 @@
+name: Intercomm
+type: module
+description: Intercomm code module
+package: custom
+core_version_requirement: ^9 || ^10

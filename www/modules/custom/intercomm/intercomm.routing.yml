@@ -1,0 +1,15 @@
+intercomm.example:
+  path: '/intercomm/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\intercomm\Controller\IntercommController::build'
+  requirements:
+    _permission: 'access content'
+
+intercomm.settings_form:
+  path: '/admin/config/system/intercomm'
+  defaults:
+    _title: 'Intercomm settings'
+    _form: 'Drupal\intercomm\Form\SettingsForm'
+  requirements:
+    _permission: 'administer intercomm configuration'
