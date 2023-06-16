@@ -38,7 +38,18 @@ composer require drupal/dropsolid_personalisation:1.x-dev
 composer require drupal/mautic_paragraph:^1.0@beta
 composer require drupal/asset_injector
 composer require drupal/metatag
-```
+composer require drupal/admin_toolbar
+composer require drupal/chosen
+composer require drupal/ctools
+composer require drupal/devel
+composer require drupal/field_group
+composer require drupal/maxlength
+composer require drupal/pathauto
+composer require drupal/redirect
+composer require drupal/webform
+composer require drupal/better_exposed_filters
+composer require drupal/views_data_export
+  ```
 
 # Config for Personalisation
  HOST:         unomi-004.dropsolid-sites.com
