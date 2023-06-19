@@ -1,0 +1,29 @@
+uuid: 89e114ba-eeda-45e0-a82e-d2adb8ce9ee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_protocol_type
+    - node.type.protocol
+    - taxonomy.vocabulary.protocol_type
+id: node.protocol.field_protocol_type
+field_name: field_protocol_type
+entity_type: node
+bundle: protocol
+label: 'Protocol type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      protocol_type: protocol_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

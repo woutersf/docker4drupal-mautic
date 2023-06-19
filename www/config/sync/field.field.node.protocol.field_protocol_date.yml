@@ -1,0 +1,24 @@
+uuid: 48d69463-1475-45c0-9b6e-394b48b4a392
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_protocol_date
+    - node.type.protocol
+  module:
+    - datetime
+id: node.protocol.field_protocol_date
+field_name: field_protocol_date
+entity_type: node
+bundle: protocol
+label: Date
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

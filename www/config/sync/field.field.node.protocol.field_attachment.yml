@@ -1,0 +1,27 @@
+uuid: bef4aa99-2387-4ce6-976d-04831c6f288a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.protocol
+  module:
+    - file
+id: node.protocol.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: protocol
+label: Attachment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt jpg jpeg png xs doc docx xls'
+  max_filesize: 50MB
+  description_field: false
+field_type: file

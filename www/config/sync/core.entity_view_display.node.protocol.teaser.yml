@@ -1,0 +1,36 @@
+uuid: 672766d7-6b29-4757-9ddb-7b5b30cca98e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.protocol.body
+    - field.field.node.protocol.field_attachment
+    - field.field.node.protocol.field_protocol_date
+    - field.field.node.protocol.field_protocol_type
+    - node.type.protocol
+  module:
+    - text
+    - user
+id: node.protocol.teaser
+targetEntityType: node
+bundle: protocol
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_attachment: true
+  field_protocol_date: true
+  field_protocol_type: true

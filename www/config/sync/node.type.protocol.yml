@@ -1,0 +1,17 @@
+uuid: a7c7448c-6f69-4551-9816-e8a71ae31380
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Protocol
+type: protocol
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

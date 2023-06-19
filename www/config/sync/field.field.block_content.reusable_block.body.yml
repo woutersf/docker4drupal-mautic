@@ -1,0 +1,28 @@
+uuid: e83c1607-3630-41b2-960e-5f764c23544d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reusable_block
+    - field.storage.block_content.body
+  module:
+    - text
+  enforced:
+    module:
+      - gutenberg
+_core:
+  default_config_hash: 5RXQefQODLix37m6HHHb7dKXF_l8R7yp0zr9fyRVbts
+id: block_content.reusable_block.body
+field_name: body
+entity_type: block_content
+bundle: reusable_block
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

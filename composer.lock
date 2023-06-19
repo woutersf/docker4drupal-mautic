@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed9640d38a1bd778943578600d06fcfd",
+    "content-hash": "081c348c4b0d6152a940f889f2991ea8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -897,6 +897,54 @@
                 "source": "https://github.com/consolidation/site-process/tree/4.2.1"
             },
             "time": "2022-10-18T13:19:35+00:00"
+        },
+        {
+            "name": "cweagans/composer-patches",
+            "version": "1.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cweagans/composer-patches.git",
+                "reference": "e190d4466fe2b103a55467dfa83fc2fecfcaf2db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/e190d4466fe2b103a55467dfa83fc2fecfcaf2db",
+                "reference": "e190d4466fe2b103a55467dfa83fc2fecfcaf2db",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0 || ~2.0",
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "cweagans\\Composer\\Patches"
+            },
+            "autoload": {
+                "psr-4": {
+                    "cweagans\\Composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cameron Eagans",
+                    "email": "me@cweagans.net"
+                }
+            ],
+            "description": "Provides a way to patch Composer packages.",
+            "support": {
+                "issues": "https://github.com/cweagans/composer-patches/issues",
+                "source": "https://github.com/cweagans/composer-patches/tree/1.7.3"
+            },
+            "time": "2022-12-20T22:53:13+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -3307,6 +3355,67 @@
             "homepage": "https://www.drupal.org/project/redirect",
             "support": {
                 "source": "https://git.drupalcode.org/project/redirect"
+            }
+        },
+        {
+            "name": "drupal/single_datetime",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/single_datetime.git",
+                "reference": "8.x-1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/single_datetime-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "86965882822863bc41f45c409ab8bc787c7c02ce"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "zodiacmedia/drupal-libraries-installer": ">=v1.4.1"
+            },
+            "require-dev": {
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.8",
+                    "datestamp": "1671888860",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Valentino Medimorec (valic)",
+                    "homepage": "https://www.drupal.org/u/valic",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "jcnventura",
+                    "homepage": "https://www.drupal.org/user/122464"
+                },
+                {
+                    "name": "valic",
+                    "homepage": "https://www.drupal.org/user/980550"
+                }
+            ],
+            "description": "Date time picker form element using the xdan jQuery Plugin Date and Time Picker library",
+            "homepage": "https://www.drupal.org/project/single_datetime",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/single_datetime",
+                "issues": "https://www.drupal.org/project/issues/single_datetime"
             }
         },
         {
@@ -8442,6 +8551,61 @@
                 "source": "https://github.com/webflo/drupal-finder/tree/1.2.2"
             },
             "time": "2020-10-27T09:42:17+00:00"
+        },
+        {
+            "name": "zodiacmedia/drupal-libraries-installer",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zodiacmedia/drupal-libraries-installer.git",
+                "reference": "31bca11d4181d654e33bfc48f7f5fd0a2c473571"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zodiacmedia/drupal-libraries-installer/zipball/31bca11d4181d654e33bfc48f7f5fd0a2c473571",
+                "reference": "31bca11d4181d654e33bfc48f7f5fd0a2c473571",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "composer/installers": "^1.1 || ^2.0",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.4.4",
+                "ext-json": "*",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Zodiacmedia\\DrupalLibrariesInstaller\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zodiacmedia\\DrupalLibrariesInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Beemsterboer",
+                    "homepage": "https://github.com/balbuf"
+                },
+                {
+                    "name": "codebymikey",
+                    "homepage": "https://www.drupal.org/u/codebymikey"
+                }
+            ],
+            "description": "Install Drupal libraries via a simple listing in your composer.json file",
+            "support": {
+                "issues": "https://github.com/zodiacmedia/drupal-libraries-installer/issues",
+                "source": "https://github.com/zodiacmedia/drupal-libraries-installer/tree/v1.6.0"
+            },
+            "time": "2022-11-19T17:24:09+00:00"
         }
     ],
     "packages-dev": [],

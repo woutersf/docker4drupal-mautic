@@ -1,0 +1,37 @@
+uuid: ad14f7cb-dd70-4b39-9318-9cf120e7a752
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reusable_block
+    - field.field.block_content.reusable_block.body
+  module:
+    - text
+  enforced:
+    module:
+      - gutenberg
+_core:
+  default_config_hash: LMzXnAY8MqVbuuzTpfSafPS4IbJIbCo3fXQKwfyf9tY
+id: block_content.reusable_block.default
+targetEntityType: block_content
+bundle: reusable_block
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

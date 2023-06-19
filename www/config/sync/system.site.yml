@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 72d07fba-bcf6-4585-864d-d959bddbc4f5
+name: Intercomm
+mail: woutersf@gmail.com
+slogan: 'Internal Communication management'
+page:
+  403: ''
+  404: /node/13
+  front: /communication
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

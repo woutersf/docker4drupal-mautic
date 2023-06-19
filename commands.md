@@ -56,9 +56,18 @@ composer require cweagans/composer-patches
 
   ```
 
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "views references 3347343": "https://www.drupal.org/files/issues/2022-12-14/drupal-views-entity-reference-filter-2429699-521.patch"
+            }
+         },
 
 
-https://www.drupal.org/files/issues/2018-11-02/22429699-114.patch
+               "drupal/core": {
+                "Datepatch": "https://www.drupal.org/files/issues/2022-10-31/2648950-265_1.patch"
+            }
+
 
 # Config for Personalisation
  HOST:         unomi-004.dropsolid-sites.com

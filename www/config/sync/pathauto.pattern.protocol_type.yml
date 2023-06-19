@@ -1,0 +1,22 @@
+uuid: 7a44c520-74ab-4082-97e3-eac0514f11fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: protocol_type
+label: protocol-type
+type: 'canonical_entities:taxonomy_term'
+pattern: 'protocol-type/[term:name]'
+selection_criteria:
+  0e103310-5d20-41b4-8613-03fe515b7fb1:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 0e103310-5d20-41b4-8613-03fe515b7fb1
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      protocol_type: protocol_type
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,21 @@
+uuid: d8a65f11-41ff-49c9-94a4-c0d9e9f1b316
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_datetime
+    - node.type.communication
+id: node.communication.field_datetime
+field_name: field_datetime
+entity_type: node
+bundle: communication
+label: Date
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1686918622
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

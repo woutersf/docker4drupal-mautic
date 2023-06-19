@@ -1,0 +1,29 @@
+uuid: a16d89d8-517f-4968-b463-12275aaf1850
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_label
+    - node.type.communication
+    - taxonomy.vocabulary.communicatie_label
+id: node.communication.field_label
+field_name: field_label
+entity_type: node
+bundle: communication
+label: Label
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      communicatie_label: communicatie_label
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

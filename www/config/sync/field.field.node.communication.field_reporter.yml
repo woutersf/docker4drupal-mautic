@@ -1,0 +1,35 @@
+uuid: 43c2e895-6b93-449f-b6e2-3554009757a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reporter
+    - node.type.communication
+  module:
+    - epp
+third_party_settings:
+  epp:
+    value: '[current-user:uid]'
+    on_update: 0
+id: node.communication.field_reporter
+field_name: field_reporter
+entity_type: node
+bundle: communication
+label: Reporter
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 953e6130-a10f-4178-aa5e-2aedf2816079
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.protocol
+id: node.protocol.status
+field_name: status
+entity_type: node
+bundle: protocol
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

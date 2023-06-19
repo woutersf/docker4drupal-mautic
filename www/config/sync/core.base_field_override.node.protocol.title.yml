@@ -1,0 +1,18 @@
+uuid: cd614b04-d2e2-4ea9-8d45-b66f96e8898f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.protocol
+id: node.protocol.title
+field_name: title
+entity_type: node
+bundle: protocol
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

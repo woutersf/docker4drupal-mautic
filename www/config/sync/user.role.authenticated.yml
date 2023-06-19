@@ -1,0 +1,30 @@
+uuid: 2527c476-4f2d-4330-933b-426a61b72a3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.communication
+  module:
+    - comment
+    - contact
+    - filter
+    - node
+    - system
+    - toolbar
+_core:
+  default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'create communication content'
+  - 'edit own communication content'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'use text format basic_html'

@@ -1,0 +1,136 @@
+uuid: 73ab3b0b-1e87-492f-9059-bb99a0f6ce6c
+langcode: en
+status: true
+dependencies: {  }
+id: basic_css
+label: 'Basic CSS'
+code: |+
+  a[link="standard.front_page homelink"]{
+  	background-image: url(/themes/custom/retro_intercomm/intercomm.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-position-x: center;
+      width: 101px;
+      display: inline;
+      text-indent: -9999px;
+      padding-right: 1em;
+          display: block;
+      margin: 0px;
+  }
+
+  .region-header{
+  	margin-top:1.5em;
+  }
+
+  header.content-header{
+  	    padding-top: 10px;
+  	    background-color:white;
+  }
+  .region-breadcrumb{
+  	 display: flex;
+     justify-content: space-between;
+  }
+  #block-mainnavigation,
+  #block-useraccountmenu{
+  	
+  }
+
+  #block-mainnavigation .menu{
+  	margin:1em;
+  	margin-top:0px;
+  }
+  #block-mainnavigation .menu li{
+  	display:inline-block;
+  }
+  #block-mainnavigation .menu li a{
+  	padding:1em;
+  	margin:1em;
+  }
+  #block-mainnavigation .menu li a{
+      
+      background-color: rgba(7,36,109,0.8);
+      color: white;
+      border-radius: 0px 0px 10px 10px;
+      margin-left: 0px;
+      color: rgb(222,217,71);
+      background-size: contain;
+      font-weight: bold;
+      text-decoration:underline;
+  }
+  #block-mainnavigation .menu li a.is-active{
+  	background-color: rgb(7,36,109);
+  	text-decoration: none;
+  }
+
+
+  #block-useraccountmenu .menu{
+  	margin:1em;
+  	margin-top:0px;
+  }
+  #block-useraccountmenu .menu li{
+  	display:inline-block;
+  }
+  #block-useraccountmenu .menu li a{
+  	padding:1em;
+  	margin:1em;
+  }
+  #block-useraccountmenu .menu li a{
+      
+      background-color: rgba(7,36,109,0.8);
+      color: white;
+      border-radius: 0px 0px 10px 10px;
+      margin-left: 0px;
+      color: rgb(222,217,71);
+      
+      font-weight: bold;
+      text-decoration:underline;
+  }
+  #block-useraccountmenu .menu li a.is-active{
+  	background-color: rgb(7,36,109);
+  	text-decoration: none;
+  }
+  .view-id-communications #edit-field-datetime-value{
+  	    width: 150px;
+  }
+  .view-id-communications #edit-field-responsible-target-id{
+  	    width: 150px;
+  }
+  .view-id-communications #edit-field-reporter-target-id{
+  	    width: 150px;
+  }
+  #views-exposed-form-communications-page-1{
+  	padding: 0rem 1rem 1rem 1rem;
+  }
+
+  #edit-field-protocol-date-value-collapsible{
+     margin: 1rem 0.75rem 0rem 0rem;
+  }
+
+  .field--name-field-comments  h3{
+  	display:none;
+  }
+  .field--name-field-comments .comment__meta > a{
+  	display:none;
+  }
+  .comment__meta{
+      text-align: right;
+      color: gray;
+      font-style: italic;
+  }
+
+  .page-node-type-documentation-page .node__meta .node__submitted{
+      text-align: right;
+      color: gray;
+      font-style: italic;
+  }
+
+  .field--name-field-comments .comment-form__title{
+  	display:none;
+  }
+
+media: all
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true

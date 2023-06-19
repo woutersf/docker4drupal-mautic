@@ -1,0 +1,22 @@
+uuid: c615eb35-ef4b-4a93-afbd-f5589323a8fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: protocol_node
+label: protocol-node
+type: 'canonical_entities:node'
+pattern: 'protocol/[node:title]'
+selection_criteria:
+  98c9087b-dd78-429f-b2ba-6ceabcc174b4:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 98c9087b-dd78-429f-b2ba-6ceabcc174b4
+    context_mapping:
+      node: node
+    bundles:
+      protocol: protocol
+selection_logic: and
+weight: -5
+relationships: {  }

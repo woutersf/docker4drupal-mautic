@@ -1,0 +1,8 @@
+uuid: 3bdc3fe0-7d23-49ba-a615-68700e0e112a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Protocol type'
+vid: protocol_type
+description: ''
+weight: 0

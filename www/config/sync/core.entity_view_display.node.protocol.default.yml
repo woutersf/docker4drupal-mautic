@@ -1,0 +1,58 @@
+uuid: b2d60e11-20dd-44b0-9abf-a6e7dc8b24fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.protocol.body
+    - field.field.node.protocol.field_attachment
+    - field.field.node.protocol.field_protocol_date
+    - field.field.node.protocol.field_protocol_type
+    - node.type.protocol
+  module:
+    - datetime
+    - file
+    - text
+    - user
+id: node.protocol.default
+targetEntityType: node
+bundle: protocol
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_attachment:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_protocol_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_protocol_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

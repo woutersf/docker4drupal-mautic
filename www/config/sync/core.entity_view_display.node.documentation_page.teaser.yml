@@ -1,0 +1,30 @@
+uuid: db095c19-dc43-409d-9194-62ba4ac35a07
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.documentation_page.body
+    - node.type.documentation_page
+  module:
+    - text
+    - user
+id: node.documentation_page.teaser
+targetEntityType: node
+bundle: documentation_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

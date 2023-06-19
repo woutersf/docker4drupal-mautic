@@ -1,0 +1,35 @@
+uuid: a92a864f-7fa7-4bad-bed5-10f91fb8e76f
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - core.entity_view_mode.comment.full
+    - field.field.comment.comment.comment_body
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: aBQUGsQ46M4048fIlFuTXwl2zV0j2cJX89CTUobh9hA
+id: comment.comment.full
+targetEntityType: comment
+bundle: comment
+mode: full
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

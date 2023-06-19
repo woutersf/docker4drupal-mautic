@@ -1,0 +1,22 @@
+uuid: 7850d745-eea4-4534-832a-314fabee5e6e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: communication_node
+label: communication-node
+type: 'canonical_entities:node'
+pattern: 'communication/[node:title]'
+selection_criteria:
+  2fd3431e-b066-4090-a527-a2e513ed2c1b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2fd3431e-b066-4090-a527-a2e513ed2c1b
+    context_mapping:
+      node: node
+    bundles:
+      communication: communication
+selection_logic: and
+weight: -5
+relationships: {  }

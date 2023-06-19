@@ -1,0 +1,33 @@
+uuid: a697bbbf-2566-474c-9d90-f68e0517cad7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.documentation_page.body
+    - node.type.documentation_page
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.documentation_page.default
+targetEntityType: node
+bundle: documentation_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

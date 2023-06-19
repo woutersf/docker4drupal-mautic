@@ -1,0 +1,29 @@
+uuid: 825d69d8-2695-4bc3-b8ec-f6d086650d47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_responsible
+    - node.type.communication
+id: node.communication.field_responsible
+field_name: field_responsible
+entity_type: node
+bundle: communication
+label: Responsible
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

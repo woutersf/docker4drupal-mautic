@@ -1,0 +1,23 @@
+uuid: 34014483-a709-46e4-9941-7647a978ca5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_communication_attachement
+field_name: field_communication_attachement
+entity_type: node
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

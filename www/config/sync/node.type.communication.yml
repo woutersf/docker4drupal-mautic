@@ -1,0 +1,17 @@
+uuid: e3747538-3530-43a9-a140-ed472d6767fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Communication
+type: communication
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

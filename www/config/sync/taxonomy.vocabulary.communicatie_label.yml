@@ -1,0 +1,8 @@
+uuid: a335956d-f6e7-4e1d-a9b1-8b7294e3e195
+langcode: en
+status: true
+dependencies: {  }
+name: 'Communicatie label'
+vid: communicatie_label
+description: ''
+weight: 0
