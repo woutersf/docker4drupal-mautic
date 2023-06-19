@@ -1,0 +1,29 @@
+uuid: baade4ad-2f54-483c-88c4-1bf705c21838
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: toggle_comments
+label: 'Toggle comments'
+code: |-
+  $( document ).ready(function() {
+  	$('.view-id-communications tr.comms-row .view-comments-test').each(function( index ) {
+    	console.log( index + ": " + $( this ).text() );
+  	});
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      communication: communication
+contexts: {  }
+conditions_require_all: true

@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: basic_css
 label: 'Basic CSS'
-code: |+
+code: |-
   a[link="standard.front_page homelink"]{
   	background-image: url(/themes/custom/retro_intercomm/intercomm.png);
       background-size: contain;
@@ -29,7 +29,7 @@ code: |+
   }
   .region-breadcrumb{
   	 display: flex;
-     justify-content: space-between;
+     justify-content: space-between;r
   }
   #block-mainnavigation,
   #block-useraccountmenu{
@@ -124,11 +124,35 @@ code: |+
       color: gray;
       font-style: italic;
   }
+  .node--type-communication .node__submitted{
+  	text-align: right;
+      color: gray;
+      font-style: italic;
+  }
 
   .field--name-field-comments .comment-form__title{
   	display:none;
   }
 
+  .view-id-comments_test {
+  	min-width: 500px;	
+  }
+  .comms-row .views-field.views-field-field-datetime{
+  	    font-size: 0.9em;
+  	    text-wrap: nowrap;
+  }
+  .view-id-communications > .view-content > table > tbody > tr > td{
+  	    vertical-align: top;
+  }
+  .view-id-communications > .view-content > table > tbody > tr > td > p{
+  	margin-top:0px;
+  }
+  .view-id-comments_test .views-field-comment-body .field-content p{
+  	margin-top:0px;
+  }
+  .views-field-field-protocol-date{
+  	text-wrap: nowrap;
+  }
 media: all
 preprocess: true
 conditions: {  }

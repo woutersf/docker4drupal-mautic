@@ -53,6 +53,7 @@ composer require drupal/epp
 composer require drupal/devel
 entity_reference_exposed_filters
 composer require cweagans/composer-patches
+composer require drupal/views_field_view
 
   ```
 
