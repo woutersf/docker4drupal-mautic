@@ -25,7 +25,7 @@
         "drupal/core-recommended": "^10",
         "drupal/ctools": "^4.0",
         "drupal/key": "^1.17",
-        "drupal/openai": "^1.0.0-alpha14",
+        "drupal/openai": "^1.0.0-dev",
         "drupal/openai_images": "1.0.x-dev",
         "drupal/search_api": "^1.29",
         "drupal/search_api_ai": "^1.0@alpha",
