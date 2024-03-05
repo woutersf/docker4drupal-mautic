@@ -1,7 +1,10 @@
 .idea/
+
 www/vendor/
 mutagen.yml.lock
+
 .vscode
+
 mariadb
 mautic
 www/web/autoload.php
