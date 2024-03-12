@@ -22,7 +22,7 @@ ports:
     onOpen: open-browser
     visibility: private
 
-  # - port: 83
-  #   name: Mailhog
-  #   onOpen: open-browser
-  #   visibility: private
+  - port: 83
+    name: Mailhog
+    onOpen: open-browser
+    visibility: private
