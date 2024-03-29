@@ -57,7 +57,8 @@
         "patches": {
             "drupal/core": {
                 "Datepatch": "https://www.drupal.org/files/issues/2022-10-31/2648950-265_1.patch"
-            },            "drupal/search_api_ai": {
+            },            
+            "drupal/search_api_ai": {
                 "Pineconepatch": "https://git.drupalcode.org/project/search_api_ai/-/merge_requests/11.patch"
             },
             "drupal/openai": {
