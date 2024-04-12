@@ -1,4 +1,4 @@
-# I'm a Lazy ass typist
+# shorter commands
 ```
 alias drc=docker-compose
 alias gs='git status'
@@ -7,7 +7,7 @@ alias gs='git status'
 
 # shell into Drupal container
 ```
-docker exec -it my_drupal9_project_php /bin/bash
+docker exec -it my_drupal10_project_php /bin/bash
 ```
 
 # Edit the settings file (in the PHP container)
